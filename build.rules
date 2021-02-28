@@ -1,0 +1,27 @@
+vulkan.o
+:
+vulkan.h
+vulkan.cpp
+:
+c++ -c --std=c++17 vulkan.cpp -o vulkan.o
+:
+
+sdl.o
+:
+sdl.cpp
+:
+c++ -c --std=c++17 sdl.cpp -o sdl.o
+:
+
+test
+:
+vulkan.o
+sdl.o
+test.cpp
+:
+c++ --std=c++17 -lSDL2 -lvulkan
+vulkan.o
+sdl.o
+test.cpp
+-o test
+:
